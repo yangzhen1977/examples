@@ -2,7 +2,7 @@
 set(TARGET_NAME test_regex)
 
 add_executable (${TARGET_NAME}
-    test_regex_main.cpp
+    test_regex.cpp
     )
 
 
