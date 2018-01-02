@@ -1,6 +1,5 @@
 // Example program
 #include <cstdlib>
-#include <experimental/filesystem>
 #include <iostream>
 #include <string>
 #include <regex>
