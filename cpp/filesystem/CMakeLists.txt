@@ -20,4 +20,4 @@ set_target_properties(${TARGET_NAME} PROPERTIES
     )
 
 
-add_test (test_filesystem ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME} "1" "2" )
+add_test (test_filesystem ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME})

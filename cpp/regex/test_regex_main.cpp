@@ -1,10 +1,11 @@
 // Example program
+#include <cassert>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include <regex>
 
-int test_regex(int argc, char *argv[])
+int test_regex_match(int argc, char *argv[])
 {
     std::regex re("(.*) (.*)");
     std::string line = "abc 123";
@@ -27,8 +28,19 @@ int test_regex(int argc, char *argv[])
     std::cout << "new line2:" << new_line2 << std::endl;
     return 0;
 }
+int test_regex_replace(int argc, char *argv[])
+{
+    std::string ori_str = "/Users/test/testapp.o.ast.dump";
+    const std::string target_str = "/Users/test/testapp.o.info.json";
+    std::string new_str = std::regex_replace(ori_str, std::regex("ast\\.dump$"), "info.json");
+    std::cout <<"ori_str:" << ori_str << std::endl;
+    std::cout <<"new_str:" << new_str << std::endl;
+    assert(new_str == target_str);
+    return 0;
+}
 int main(int argc, char *argv[])
 {
-    return test_regex(argc, argv);
+    test_regex_match(argc, argv);
+    test_regex_replace(argc, argv);
     return 0;
 }
