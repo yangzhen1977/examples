@@ -15,4 +15,4 @@ set_target_properties(${TARGET_NAME} PROPERTIES
             CXX_EXTENSIONS OFF
     )
 
-add_test (test_filesystem ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME} )
+add_test (${TARGET_NAME} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME} )
