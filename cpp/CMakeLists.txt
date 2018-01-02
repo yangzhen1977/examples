@@ -31,7 +31,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 enable_testing ()
 add_subdirectory (regex)
 add_subdirectory (filesystem)
-#add_subdirectory (json)
+add_subdirectory (json)
 
 
 
