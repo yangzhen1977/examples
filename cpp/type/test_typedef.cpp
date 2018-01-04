@@ -12,7 +12,9 @@ class CParent
 class CChild1 : public CParent
 {
   public:
+    data_type  data_before_self_typedef;
     typedef char data_type[2];
+    data_type data_after_self_typedef;
   public:
     void check_parent_typedef(){
         std::cout << "call in Child1 sizeof(CParent::data_type):" << sizeof(CParent::data_type) << std::endl;
@@ -21,9 +23,14 @@ class CChild1 : public CParent
     void check_self_typedef(){
         std::cout << "call in Child1 sizeof(data_type):" << sizeof(data_type) << std::endl;
         assert(2 == sizeof(data_type));
-        
+
         std::cout << "call in Child1 sizeof(CChild1::data_type):" << sizeof(CChild1::data_type) << std::endl;
         assert(2 == sizeof(CChild1::data_type));
+
+        std::cout << "call in Child1 sizeof(data_before_self_typedef)" << sizeof(data_before_self_typedef) << std::endl;
+        assert(1 == sizeof(data_before_self_typedef));
+        std::cout << "call in Child1 sizeof(data_after_self_typedef)" << sizeof(data_after_self_typedef) << std::endl;
+        assert(2 == sizeof(data_after_self_typedef));
     }
 };
 
