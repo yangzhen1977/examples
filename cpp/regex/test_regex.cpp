@@ -30,13 +30,27 @@ int test_regex_match(int argc, char *argv[])
 }
 int test_regex_replace(int argc, char *argv[])
 {
-    std::string ori_str = "/Users/test/testapp.o.ast.dump";
-    const std::string target_str = "/Users/test/testapp.o.info.json";
-    std::string new_str = std::regex_replace(ori_str, std::regex("ast\\.dump$"), "info.json");
-    std::cout <<"ori_str:" << ori_str << std::endl;
+    std::string ori_str;
+    std::string target_str;
+    std::string new_str;
+
+    ori_str = "/Users/test/testapp.o.ast.dump";
+    target_str = "/Users/test/testapp.o.info.json";
+    new_str = std::regex_replace(ori_str, std::regex("ast\\.dump$"), "info.json");
+    std::cout << "ori_str:" << ori_str << std::endl;
+    std::cout << "target:" << target_str << std::endl;
     std::cout <<"new_str:" << new_str << std::endl;
     assert(new_str == target_str);
     assert(new_str != ori_str);
+
+    ori_str = "1\r\n2\n3\r\n";
+    target_str = "123";
+    new_str = std::regex_replace(ori_str, std::regex("\r|\n"), "");
+    std::cout << "ori_str:" << ori_str << std::endl;
+    std::cout << "target:" << target_str << std::endl;
+    std::cout << "new_str:" << new_str << std::endl;
+    assert(new_str == target_str);
+    assert(new_str !=  ori_str);
     return 0;
 }
 int main(int argc, char *argv[])
