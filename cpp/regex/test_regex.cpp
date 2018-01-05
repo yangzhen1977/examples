@@ -36,6 +36,7 @@ int test_regex_replace(int argc, char *argv[])
     std::cout <<"ori_str:" << ori_str << std::endl;
     std::cout <<"new_str:" << new_str << std::endl;
     assert(new_str == target_str);
+    assert(new_str != ori_str);
     return 0;
 }
 int main(int argc, char *argv[])
