@@ -5,7 +5,23 @@
 #include <string>
 #include <regex>
 
-int test_regex_match(int argc, char *argv[])
+int test_regex_match_without_result(int argc, char *argv[])
+{
+    std::regex re("(.*) (.*)");
+    std::string line = "abc 123";
+    if (std::regex_match(line, re))
+    {
+        std::cout << "match" << std::endl;
+    }
+    else
+    {
+        assert(false);
+        std::cerr << "not match" << std::endl;
+    }
+
+    return 0;
+}
+int test_regex_match_with_result(int argc, char *argv[])
 {
     std::regex re("(.*) (.*)");
     std::string line = "abc 123";
@@ -55,7 +71,8 @@ int test_regex_replace(int argc, char *argv[])
 }
 int main(int argc, char *argv[])
 {
-    test_regex_match(argc, argv);
+    test_regex_match_without_result(argc, argv);
+    test_regex_match_with_result(argc, argv);
     test_regex_replace(argc, argv);
     return 0;
 }
