@@ -1,0 +1,13 @@
+
+set(TARGET_NAME test_div)
+
+add_executable (${TARGET_NAME}
+    test_div.cpp
+    )
+
+
+target_link_libraries(${TARGET_NAME}
+    libc++experimental.a
+    )
+
+add_test (${TARGET_NAME} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME} )

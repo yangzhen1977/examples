@@ -35,6 +35,7 @@ add_subdirectory (json)
 add_subdirectory (type)
 add_subdirectory (class)
 add_subdirectory (string)
+add_subdirectory (div)
 
 
 
