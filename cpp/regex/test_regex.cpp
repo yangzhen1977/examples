@@ -44,6 +44,31 @@ int test_regex_match_with_result(int argc, char *argv[])
     std::cout << "new line2:" << new_line2 << std::endl;
     return 0;
 }
+int test_regex_match_prefix_suffix(int argc, char *argv[])
+{
+    std::regex re("([a-z]*) ([a-z]*)");
+    std::string line = "123aaa bbb456";
+    std::smatch m;
+    if (std::regex_search(line, m, re))
+    {
+        std::cout << "match" << std::endl;
+        std::cout << "m[1]" << m[1] << std::endl;
+        std::cout << "m.prefix:" << m.prefix().str() << std::endl;
+        std::cout << "m.suffix:" << m.suffix().str() << std::endl;
+        std::cout << "m[1]" << m[1] << std::endl;
+        std::cout << "m[2]" << m[2] << std::endl;
+        assert(m.prefix().str() == "123");
+        assert(m.suffix().str() == "456");
+        assert(m[1] == "aaa");
+        assert(m[2] == "bbb");
+    }
+    else
+    {
+        assert(false);
+        std::cerr << "not match" << std::endl;
+    }
+    return 0;
+}
 int test_regex_replace(int argc, char *argv[])
 {
     std::string ori_str;
@@ -73,6 +98,7 @@ int main(int argc, char *argv[])
 {
     test_regex_match_without_result(argc, argv);
     test_regex_match_with_result(argc, argv);
+    test_regex_match_prefix_suffix(argc, argv);
     test_regex_replace(argc, argv);
     return 0;
 }

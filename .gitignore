@@ -1,2 +1,4 @@
 */build
 cpp/json/downloads
+.vscode
+**/.cmd.txt
