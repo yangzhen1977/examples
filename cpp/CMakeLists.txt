@@ -29,13 +29,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 enable_testing ()
-add_subdirectory (regex)
+add_subdirectory (class)
+add_subdirectory (div)
 add_subdirectory (filesystem)
 add_subdirectory (json)
-add_subdirectory (type)
-add_subdirectory (class)
+add_subdirectory (macro)
+add_subdirectory (regex)
 add_subdirectory (string)
-add_subdirectory (div)
+add_subdirectory (type)
 
 
 
