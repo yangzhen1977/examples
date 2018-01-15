@@ -9,5 +9,5 @@ endfunction(AddTestWithSammeCppFile)
 
 AddTestWithSameCppFile(test_filesystem)
 AddTestWithSameCppFile(test_filesystem_loop_each_dir_item)
-AddTestWithSameCppFile(test_filesystem_to_string)
+AddTestWithSameCppFile(test_filesystem_from_or_to_string)
 
