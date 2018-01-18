@@ -5,9 +5,10 @@ function( AddTestWithSameCppFile test_name)
     add_executable(${TARGET_NAME} ${SRCS} )
     target_link_libraries(${TARGET_NAME} libc++experimental.a )
     add_test (${TARGET_NAME} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME})
-endfunction(AddTestWithSammeCppFile)
+endfunction( AddTestWithSameCppFile)
 
 AddTestWithSameCppFile(test_filesystem)
 AddTestWithSameCppFile(test_filesystem_loop_each_dir_item)
 AddTestWithSameCppFile(test_filesystem_from_or_to_string)
+AddTestWithSameCppFile(test_filesystem_dir_relation)
 
