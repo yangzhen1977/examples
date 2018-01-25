@@ -27,6 +27,11 @@ void test_lower_bound()
     iter = m.lower_bound(7);
     assert(9 == iter->first);
     std::cout << "7 lower_bound:" << iter->second << std::endl;
+
+
+    iter = m.lower_bound(10);
+    assert(m.end() == iter);
+    std::cout << "10 lower_bound: not found " << std::endl;
 }
 
 
@@ -53,6 +58,14 @@ void test_upper_bound()
     iter = m.upper_bound(7);
     assert(9 == iter->first);
     std::cout << "7 upper_bound:" << iter->second << std::endl;
+
+    iter = m.upper_bound(20);
+    assert(m.end() == iter );
+    std::cout << "20 upper_bound: not found" << std::endl;
+
+    iter = m.upper_bound(30);
+    assert(m.end() == iter );
+    std::cout << "30 upper_bound: not found" << std::endl;
 }
 
 int main(int argc, char* argv[])
