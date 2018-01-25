@@ -28,10 +28,19 @@ void implict_path_from_string()
     assert(cur_path == canonical_path_from_string);
 }
 
+void canonical_path()
+{
+    std::string p = "/Users/zyang2/Workspace/sqbu-github.cisco.com/zyang2/wme-novum/mediasession/bld/mac/../../src/../../api/MediaConnection4T.h";
+
+    auto p1 = std::experimental::filesystem::canonical(p);
+    std::cout << p1.string() << std::endl;
+}
+
 int main(int argc, char *argv[])
 {
     path_to_string();
     path_from_string();
     implict_path_from_string();
+    canonical_path();
     return 0;
 }
