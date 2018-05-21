@@ -92,6 +92,16 @@ int test_regex_replace(int argc, char *argv[])
     std::cout << "new_str:" << new_str << std::endl;
     assert(new_str == target_str);
     assert(new_str !=  ori_str);
+
+
+    ori_str = "123abc456abc";
+    target_str = "123def456def";
+    new_str = std::regex_replace(ori_str, std::regex("abc"), "def");
+    std::cout << "ori_str:" << ori_str << std::endl;
+    std::cout << "target:" << target_str << std::endl;
+    std::cout << "new_str:" << new_str << std::endl;
+    assert(new_str == target_str);
+    assert(new_str !=  ori_str);
     return 0;
 }
 
