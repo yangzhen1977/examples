@@ -102,6 +102,36 @@ int test_regex_replace(int argc, char *argv[])
     std::cout << "new_str:" << new_str << std::endl;
     assert(new_str == target_str);
     assert(new_str !=  ori_str);
+
+
+    ori_str = "'int32_t (class wme::IWmeExternalInputter **)'";
+    target_str = "'int32_t (wme::IWmeExternalInputter **)'";
+    new_str = std::regex_replace(ori_str, std::regex("\\\(class "), "\(");
+    std::cout << "ori_str:" << ori_str << std::endl;
+    std::cout << "target:" << target_str << std::endl;
+    std::cout << "new_str:" << new_str << std::endl;
+    assert(new_str == target_str);
+    assert(new_str !=  ori_str);
+
+
+    ori_str = "'int32_t (int32_t a, class wme::IWmeExternalInputter **)'";
+    target_str = "'int32_t (int32_t a, wme::IWmeExternalInputter **)'";
+    new_str = std::regex_replace(ori_str, std::regex(", class "), ", ");
+    std::cout << "ori_str:" << ori_str << std::endl;
+    std::cout << "target:" << target_str << std::endl;
+    std::cout << "new_str:" << new_str << std::endl;
+    assert(new_str == target_str);
+    assert(new_str !=  ori_str);
+
+
+    ori_str = "'int32_t (class wme::IWmeExternalInputter **, class wme::IWmeExternalInputter **)'";
+    target_str = "'int32_t (wme::IWmeExternalInputter **, wme::IWmeExternalInputter **)'";
+    new_str = std::regex_replace(ori_str, std::regex(", class "), ", ");
+    std::cout << "ori_str:" << ori_str << std::endl;
+    std::cout << "target:" << target_str << std::endl;
+    std::cout << "new_str:" << new_str << std::endl;
+    assert(new_str == target_str);
+    assert(new_str !=  ori_str);
     return 0;
 }
 

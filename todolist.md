@@ -1,5 +1,6 @@
 # header
 
+* [ ] code indentation in namespace, 2 level namespaces
 * [ ] trace info, error with class/function/line/file information
 * [ ] std::ostream_iterator<std::string>(std::cout, "\n"), in http://en.cppreference.com/w/cpp/regex/regex_token_iterator
 * [ ] regex iterator
